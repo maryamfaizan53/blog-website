@@ -12,7 +12,7 @@ export async function generateStaticParams() {
   }`;
   const slugs = await client.fetch(query);
   return slugs.map((item: { slug: string }) => ({
-    params: { slug: item.slug },
+    slug: item.slug,
   }));
 }
 
